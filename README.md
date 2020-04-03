@@ -28,3 +28,15 @@ npm run doc
 npm run doc:live
 
 ```
+
+### Test unitarios
+Podemos ejecutar test unitarios para validarlos, o ejectuar el comando para que nos valide la covertura de test del código.
+
+```js
+// Nos levantaría un navegador para ir depurando los test unitarios
+npm run test
+
+// Nos ejecutaría los test unitarios y nos analizaría si pasamos la covertura de test indicada en el kama
+npm run test:cov
+
+```
