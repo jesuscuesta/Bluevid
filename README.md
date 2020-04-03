@@ -40,3 +40,12 @@ npm run test
 npm run test:cov
 
 ```
+
+## Plugins
+
+### Bluetooth
+
+Hemos instalado uno de los plugins oficiales para bluetooth de ionic [Bluetooth serial](https://ionicframework.com/docs/native/bluetooth-serial).
+
+Para su correcto uso, es necesario leer la documentación del [github de plugin](https://github.com/don/BluetoothSerial). De las funciones que más nos interesan son la de [descubrir otros dispositivos con bluetooth cercanos](https://github.com/don/BluetoothSerial#discoverunpaired).
+
