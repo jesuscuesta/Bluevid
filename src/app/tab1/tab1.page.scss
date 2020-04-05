@@ -1,0 +1,9 @@
+ion-item {
+  --background: #444 !important;
+  --border-color: transparent!important;
+  color: white;
+}
+ion-img {
+  height: calc(100% - 105px);
+  object-fit: cover;
+}
