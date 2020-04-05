@@ -1,11 +1,9 @@
 <app-header title="tab 1"></app-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-item>
+    <ion-label>Activar BluVid</ion-label>
+    <ion-toggle [(ngModel)]="bluvid"></ion-toggle>
+  </ion-item>
+<ion-img src="../../assets/icon/doctor.jpg"></ion-img>
 </ion-content>

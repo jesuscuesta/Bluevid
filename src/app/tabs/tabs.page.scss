@@ -1,1 +1,25 @@
-
+ion-tab-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    background: transparent;
+    border-top: 1px solid rgba(180, 180, 180, .5);
+    ion-tab-button {
+        background: transparent;
+        position: relative;
+        &:before {
+            background: rgba(180, 180, 180, .5);
+            position: absolute;
+            right: 0;
+            content: "";
+            height: 80%;
+            top: 10%;
+            width: 1px;
+        }
+        &:last-child {
+            &:before {
+                display: none;
+            }
+        }
+    }
+}
