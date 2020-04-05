@@ -1,5 +1,9 @@
 <app-header title="Escaneando..."></app-header>
 
 <ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label>Activar BluVid</ion-label>
+    <ion-toggle [(ngModel)]="bluvid"></ion-toggle>
+  </ion-item>
   <app-indicator></app-indicator>
 </ion-content>
