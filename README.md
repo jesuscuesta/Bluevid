@@ -49,3 +49,20 @@ Hemos instalado uno de los plugins oficiales para bluetooth de ionic [Bluetooth 
 
 Para su correcto uso, es necesario leer la documentación del [github de plugin](https://github.com/don/BluetoothSerial). De las funciones que más nos interesan son la de [descubrir otros dispositivos con bluetooth cercanos](https://github.com/don/BluetoothSerial#discoverunpaired).
 
+### Para probar en emulator/dispostivo
+```
+ionic cordova prepare android (si es que no se ha ejecutado antes)
+ionic cordova build android
+```
+NOTA. El ultimo comando se genera un apk que puede ser instalado en emulador
+
+```
+ionic cordova run --list
+ionic cordova run android --target==Pixel_2_API_26 -l
+```
+NOTA. De esta forma se puede ir probando la interaccion del bluetooth
+
+Chrome Console > More Tools > Remote Devices > Click in Inpsect
+![alt text](docs/remote_devices.png "")
+![alt text](docs/console_js_remote.png "")
+
