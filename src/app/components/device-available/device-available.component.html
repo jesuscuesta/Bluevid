@@ -6,19 +6,15 @@
 
 <ion-content class="ion-padding">
 
-
-  <ion-list>
+  <ion-list class="ion-margin-top">
     <ion-item *ngFor="let device of blue.devices">
-      <ion-label>{{device.id |  slice:0:22}}  <ion-button (click)="conectar(device.id)">Conectar</ion-button></ion-label>
+      <ion-label class="ion-text-lowercase">{{device.id |  slice:0:22}}
+        <ion-button class="ion-float-right" fill="outline" color="{{ _isConnected ? 'success' : 'primary'}}" (click)="conectar(device.id)"><ion-icon slot="end" name="bluetooth"></ion-icon>{{ _isConnected ? 'Conectado' : 'Conectar'}} </ion-button></ion-label>
     </ion-item>
   </ion-list>
 
 </ion-content>
 
 <ion-footer>
-  <ion-grid>
-    <ion-row text-center>
-        <ion-button (click)="closeModal()">Close</ion-button>
-    </ion-row>
-  </ion-grid>
+  <ion-button (click)="closeModal()" expand="block">Cerrar</ion-button>
 </ion-footer>

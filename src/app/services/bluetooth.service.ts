@@ -38,13 +38,19 @@ export class BluetoothService {
 
   }
 
-  connect(deviceId: string){
-    this.ble.connect(deviceId).subscribe(peripheralData => {
-          console.log(peripheralData);
-          },
-        peripheralData => {
-          console.log('disconnected');
-        });
+  connect(deviceId: string): Promise<any>{
+    return new Promise((resolve, reject) =>{
+      this.ble.connect(deviceId)
+            .subscribe(peripheralData => {
+              console.log(peripheralData);
+              resolve();
+            },
+            peripheralData => {
+              console.log('disconnected');
+              reject();
+            });
+    })
+
   }
 
   async disconnect(deviceId: string){

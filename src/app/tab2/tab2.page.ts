@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {BluetoothService} from "../services/bluetooth.service";
 import {AlertController, ModalController} from '@ionic/angular';
 import {DeviceAvailableComponent} from "../components/device-available/device-available.component";
+import {LoadingService} from "../services/loading.service";
 
 @Component({
   selector: 'app-tab2',
@@ -10,18 +11,23 @@ import {DeviceAvailableComponent} from "../components/device-available/device-av
 })
 export class Tab2Page {
   bluvid: boolean;
+  _loading: any;
 
   constructor(private blue: BluetoothService,
-              public alertController: AlertController,
-              public modalController: ModalController,) {}
+              private alertController: AlertController,
+              private modalController: ModalController,
+              private loading: LoadingService) {}
 
   async enableBluetooth(){
+    this._loading = await this.loading.create()
     console.log(this.bluvid)
 
     if(this.bluvid){
-      this.blue.isEnabled().then( () => {
-        this.blue.scanDevices().then(()=> {
-          this.showModalDevicesAvailable();
+      this.blue.isEnabled().then(async () => {
+        await this._loading.present();
+        this.blue.scanDevices().then(async()=> {
+          await this._loading.dismiss();
+          await this.showModalDevicesAvailable();
         }).catch(error => console.error(error))
 
       }).catch(async error => {
@@ -29,10 +35,6 @@ export class Tab2Page {
         await this.sendAlert();
         this.bluvid = false;
       });
-      /*console.log(isEnableBluetooth);
-      */
-
-
     }
   }
 

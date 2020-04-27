@@ -63,15 +63,23 @@ ionic cordova build ios
 ```
 ionic cordova run --list
 ionic cordova run android --target==Pixel_2_API_26 -l
-ionic cordova run ios --target=f0a04bf01b5f5b9fe0e65ea45aa0a9b293cbca42 -l
+ionic cordova run ios --target=f0a04bf01b5f5b9fe0e65ea45aa0a9b293cbca42 -l --external
 ```
-NOTA. De esta forma se puede ir probando la interaccion del bluetooth
+NOTA. De esta forma se puede ir probando la interaccion del bluetooth <br />
 para ios se necesita instalar ios-deploy
+
+###depuracion en dispositivo ios
+Para ver la consola web mientras se esta depurando en un dispositivo ios, es necesario:
+* en el telefono/tableta activar  en configuracion > safari > avanzado > inspector web
+* para ver la consola desde el pc safari > activar web consosola de desarrollador posteriormente en menu desarrollo > telefono (nombre del dispositivo) > My App
+![alt text](docs/safari_inspect_console.png "")
+
 ``` 
 brew install ios-deploy
 ```
 
 Chrome Console > More Tools > Remote Devices > Click in Inpsect
 ![alt text](docs/remote_devices.png "")
+
 ![alt text](docs/console_js_remote.png "")
 
