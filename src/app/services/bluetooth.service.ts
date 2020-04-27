@@ -13,7 +13,7 @@ export class BluetoothService {
   scanDevices(){
 
     this.ble.startScan([]).subscribe(device => {
-      console.log(JSON.stringify(device));
+      console.log(device);
     });
 
     setTimeout(() => {
@@ -41,7 +41,7 @@ export class BluetoothService {
     );
   }
 
-  async isEnabled(){
-    await this.ble.isEnabled();
+  isEnabled(): Promise<any>{
+    return this.ble.isEnabled();
   }
 }

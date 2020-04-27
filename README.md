@@ -55,12 +55,21 @@ ionic cordova prepare android (si es que no se ha ejecutado antes)
 ionic cordova build android
 ```
 NOTA. El ultimo comando se genera un apk que puede ser instalado en emulador
+```
+ionic cordova prepare ios
+ionic cordova build ios
+```
 
 ```
 ionic cordova run --list
 ionic cordova run android --target==Pixel_2_API_26 -l
+ionic cordova run ios --target=f0a04bf01b5f5b9fe0e65ea45aa0a9b293cbca42 -l
 ```
 NOTA. De esta forma se puede ir probando la interaccion del bluetooth
+para ios se necesita instalar ios-deploy
+``` 
+brew install ios-deploy
+```
 
 Chrome Console > More Tools > Remote Devices > Click in Inpsect
 ![alt text](docs/remote_devices.png "")

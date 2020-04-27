@@ -10,10 +10,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentsModule } from './components/components.module';
 import {BLE} from "@ionic-native/ble/ngx";
+import {DeviceAvailableComponent} from "./components/device-available/device-available.component";
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [AppComponent, DeviceAvailableComponent],
+  entryComponents: [DeviceAvailableComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ComponentsModule],
   providers: [
     StatusBar,
