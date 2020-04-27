@@ -13,16 +13,17 @@ export class Tab2Page {
 
   constructor(private blue: BluetoothService,
               public alertController: AlertController,
-              public modalController: ModalController) {}
+              public modalController: ModalController,) {}
 
   async enableBluetooth(){
     console.log(this.bluvid)
 
     if(this.bluvid){
-      this.blue.isEnabled().then( (data) => {
-        console.log(data)
-        this.blue.scanDevices();
-        this.showModalDevicesAvailable();
+      this.blue.isEnabled().then( () => {
+        this.blue.scanDevices().then(()=> {
+          this.showModalDevicesAvailable();
+        }).catch(error => console.error(error))
+
       }).catch(async error => {
         console.log(error)
         await this.sendAlert();
