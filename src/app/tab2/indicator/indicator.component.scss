@@ -1,0 +1,73 @@
+
+div {
+    width: 100%;
+    height: calc(100% - 48px);
+    position: relative;
+    background-image: url("../../../assets/icon/map.png");
+    background-position: top left;
+    transition: background-position 32s linear;
+    span, .shadow::before {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        display: block;
+        font-weight: bolder;
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+    .shadow, .pulse {
+        content:"";
+        width: 130px;
+        height: 130px;
+        box-shadow: 0 0 15px #e1e1e1;
+        border-radius: 100%;
+        transition: box-shadow 1s ease-in-out;
+        opacity: .36;
+    }
+    .pulse {
+        animation: pulse 3s infinite;
+        opacity: .25;
+    }
+    #svg {
+        position: absolute;
+        display: block;
+        width: 160px;
+        height: 160px;
+        transform-origin: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        circle {
+            stroke-dashoffset: 0;
+            transition: all 1s ease-in-out;
+            stroke: rgba(200, 200, 200, .25);
+            stroke-width: .5em;
+        }
+        #bar {
+            stroke: #e1e1e1;
+        }
+    }
+}
+.animate {
+    background-position: bottom right;
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(.98);
+    }
+    20% {
+        transform: translate(-50%, -50%) scale(.98);
+        box-shadow: 0 0 0 60px rgba(#e1e1e1, 0);
+    }
+    70% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 0 15px rgba(#e1e1e1, 0);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(.98);
+        box-shadow: 0 0 0 0 rgba(#e1e1e1, 0);
+    }
+}

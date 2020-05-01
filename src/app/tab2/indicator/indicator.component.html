@@ -1,0 +1,15 @@
+
+<div [class.animate]="animate">
+  <app-risk-alert *ngIf="riskText == 'crítico' || riskText == 'alto' || count" [alert]="alert"></app-risk-alert>
+  <svg id="svg" width="160" height="160" viewPort="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <circle r="70" cx="80" cy="80" fill="transparent" stroke-dasharray="439.74" stroke-dashoffset="0"></circle>
+    <circle id="bar" r="70" cx="80" cy="80" fill="transparent" stroke-dasharray="439.74" stroke-dashoffset="0" [ngStyle]="{'strokeDashoffset': rotate, 'stroke': color}"></circle>
+  </svg>
+  <span class="shadow" [ngStyle]="{'boxShadow': shadow}"></span>
+  <span class="pulse" [ngStyle]="{'boxShadow': shadow}"></span>
+  <span [ngStyle]="{'color': color}">{{ riskText | uppercase }}</span>
+</div>
+
+
+
+
